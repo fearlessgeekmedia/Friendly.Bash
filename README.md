@@ -37,7 +37,7 @@ To use HumanBash functions in your bash scripts, simply source the humanbash.sh 
 #!/usr/bin/env bash
 
 #Source HumanBash
-source /path/to/humanbash/humanbash.sh
+source /path/to/humanbash/human.bash
 
 #Print a message at line 1
 printAtLine 1 "Hello, world!"
