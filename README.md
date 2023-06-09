@@ -57,7 +57,7 @@ confirm "Are you sure?"
 progressBar 50 
 
 #Display a progress bar while running a command
-sleep 5 | progressBar # Note that without the number, a percentage of progress will not be displayed.```
+sleep 5 | progressBar #Note that without the number, a percentage of progress will not be displayed.```
 
 Please refer to the function descriptions within the humanbash.sh script for more details on each function's usage and parameters.
 
