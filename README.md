@@ -33,6 +33,33 @@ Source the humanbash.sh script in your own bash script:
 ## Usage
 To use HumanBash functions in your bash scripts, simply source the humanbash.sh script and call the desired function. Here's an example:
 
+```
+#!/usr/bin/env bash
+
+#Source HumanBash
+source /path/to/humanbash/humanbash.sh
+
+#Print a message at line 1
+printAtLine 1 "Hello, world!"
+
+#Replace text in a file
+replaceInFile "file.txt" "old-text" "new-text"
+
+#Extract column from a CSV file
+extractColumn "data.csv" 2
+
+#Filter lines of a file by a pattern
+filterLines "file.txt" "pattern" "newline"
+
+#Display a confirmation prompt
+confirm "Are you sure?"
+
+#Display a progress bar
+progressBar 50 
+
+#Display a progress bar while running a command
+sleep 5 | progressBar #Note that without the number, a percentage of progress will not be displayed.
+```
 
 Please refer to the function descriptions within the humanbash.sh script for more details on each function's usage and parameters.
 
