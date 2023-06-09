@@ -28,12 +28,12 @@ More features coming soon! This is still in early development.
 `git clone https://github.com/your-username/humanbash.git`
 Source the humanbash.sh script in your own bash script:
 
-``source /path/to/humanbash/humanbash.sh`
+`source /path/to/humanbash/humanbash.sh`
 
 ## Usage
 To use HumanBash functions in your bash scripts, simply source the humanbash.sh script and call the desired function. Here's an example:
 
-`#!/usr/bin/env bash
+``#!/usr/bin/env bash
 
 #Source HumanBash
 source /path/to/humanbash/humanbash.sh
