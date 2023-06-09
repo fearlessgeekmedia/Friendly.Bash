@@ -8,6 +8,7 @@ Bash scripting is a powerful tool, but sometimes the syntax and constructs can b
 
 ### Optional Dependencies
 - fzf (needed for the File Selector)
+- node (needed for Progress Bar)
 
 ## Features
 HumanBash includes the following features:
