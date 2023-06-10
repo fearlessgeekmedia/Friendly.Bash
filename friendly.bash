@@ -42,6 +42,7 @@ fileSelector() {
   fi
 }
 
+## File manipulation
 # Replaces specified text in a file with new text.
 replaceInFile() {
   local file="$1"
@@ -50,6 +51,21 @@ replaceInFile() {
 
   sed -i "s/${search}/${replace}/g" "$file"
 }
+
+# Checks to see if a file exists
+
+fileExists() {
+  local file_path=$1
+  [[ -f "$file_path" ]]
+}
+
+# Checks to see if a directory exists
+
+directoryExists() {
+  local dir_path=$1
+  [[ -d "$dir_path" ]]
+}
+
 
 # Extracts a column from a .csv file
 extractColumn() {

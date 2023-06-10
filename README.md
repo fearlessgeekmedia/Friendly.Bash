@@ -15,7 +15,10 @@ Friendly.Bash includes the following features:
 
 - Message Placement: Functions for printing messages at specific lines or line/column positions on the terminal.
 - File Selector: Interactive file selection using fzf (requires fzf to be installed).
-- Text Replacement: Easily replace specified text in a file.
+- File Manipulation
+-- Check if a file exists using the fileExists function.
+-- Check if a directory exists using the directoryExists function
+-- Text Replacement: Easily replace specified text in a file.
 - CSV Column Extraction: Extract a specific column from a CSV file.
 - Line Filtering: Filter lines of a file based on a given pattern.
 - Confirmation Prompt: Simple confirmation prompt for user interaction.
@@ -45,6 +48,20 @@ printAtLine 1 "Hello, world!"
 
 #Replace text in a file
 replaceInFile "file.txt" "old-text" "new-text"
+
+# Check if a file exists
+if fileExists "file.txt"; then
+  echo "File exists!"
+else
+  echo "File does not exist."
+fi
+
+# Check if a directory exists
+if directoryExists "directory"; then
+  echo "Directory exists!"
+else
+  echo "Directory does not exist."
+fi
 
 #Extract column from a CSV file
 extractColumn "data.csv" 2

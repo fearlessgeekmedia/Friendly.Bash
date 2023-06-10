@@ -16,7 +16,7 @@ save_game() {
 
 # Function to load the game state
 load_game() {
-  if [[ -f "$game_file" ]]; then
+  if fileExists "$game_file"; then
     current_room=$(cat "$game_file")
     printAtLineCol 13 1 "Game loaded successfully."
     sleep 2
@@ -209,7 +209,7 @@ run_room() {
 }
 
 # Start the game or load the saved game
-if [[ -f "$game_file" ]]; then
+if fileExists "$game_file"; then
   printAtLineCol 13 1 "Do you want to start a new game or load the saved game? (new/load)"
 
   read -r choice
