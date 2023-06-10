@@ -1,24 +1,24 @@
 # This is a bash script library to help make bash scripting easier
-# and more human readable.
+# and more human-readable.
 #
 # I created this because I noticed there were certain things you 
 # could do in Bash, such as escape commands, which are awesome to
-# use, yet not very human readable. I like a more human readable
+# use, yet not very human-readable. I like a more human-readable
 # language. 
 #
 # So this is basically a set of functions I'm using and making
 # available to the public under the MIT license.
 
 
-#Message Placement
-#Prints a message on a specified line
+# Message Placement
+# Prints a message on a specified line
 printAtLine() {
   local LINE=$1
   shift 1
   echo -e "\033[${LINE}H$@"
 }
 
-#Prints a message starting on a specific line and column
+# Prints a message starting on a specific line and column
 printAtLineCol() {
   local LINE=$1
   local COL=$2
@@ -26,18 +26,34 @@ printAtLineCol() {
   echo -e "\033[${LINE};${COL}H$@"
 }
 
-#File Selector (will require fzf)
+# File Selector (will require fzf)
 fileSelector() {
-  if command -v fzf >/dev/null 2>&1; then
-    if [[ $1 == multi ]]
-    then
-      multi="-m"
-    else
-      multi=""
+  local extension="*"
+  local multi=""
+  local directory="."
+
+  # Join all arguments into a single string
+  local args="$@"
+
+  # Parse arguments
+  if [[ "$@" == *"-m"* ]] || [[ "$@" == *"--multi"* ]]; then
+    multi="--multi"
+  fi
+  
+  for arg in "$@"; do
+    if [[ $arg != -* ]]; then
+      if [[ -d $arg ]]; then
+        directory=$arg
+      else
+        extension=$arg
+      fi
     fi
-    SelectedFiles="$(ls * | fzf $multi --prompt 'Files: ')"
-    echo $SelectedFiles
-  else 
+  done
+
+  if command -v fzf >/dev/null 2>&1; then
+    SelectedFiles=$(find "$directory" -type f -name "*$extension*" 2>/dev/null | fzf $multi --prompt 'Files:')
+    echo "$SelectedFiles"
+  else
     echo "FZF isn't installed."
   fi
 }
@@ -53,19 +69,16 @@ replaceInFile() {
 }
 
 # Checks to see if a file exists
-
 fileExists() {
   local file_path=$1
   [[ -f "$file_path" ]]
 }
 
 # Checks to see if a directory exists
-
 directoryExists() {
   local dir_path=$1
   [[ -d "$dir_path" ]]
 }
-
 
 # Extracts a column from a .csv file
 extractColumn() {
@@ -117,11 +130,9 @@ confirm() {
 
 # String manipulation
 
-
 # Progress Bar
-
 progressBar() {
-  DIR=$( dirname -- "${BASH_SOURCE[0]}" )
-  DIR=$( realpath -e -- "$DIR" )
-  node $DIR/progressbar.js $1
+  DIR=$(dirname -- "${BASH_SOURCE[0]}")
+  DIR=$(realpath -e -- "$DIR")
+  node "$DIR/progressbar.js" "$1"
 }

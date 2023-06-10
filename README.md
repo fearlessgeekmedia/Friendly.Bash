@@ -8,6 +8,7 @@ Bash scripting is a powerful tool, but sometimes the syntax and constructs can b
 
 ### Optional Dependencies
 - fzf (needed for the File Selector)
+- find/mlocate (needed for the File Selector)
 - node (needed for Progress Bar)
 
 ## Features
@@ -82,6 +83,35 @@ progressBar 50
 #Display a progress bar while running a command
 sleep 5 | progressBar #Note that without the number, a percentage of progress will not be displayed.
 ```
+## fileSelector
+
+Interactive file selection using fzf.
+
+### Usage
+
+`fileSelector [options] [directory] [extension]`
+
+###Options
+-m or --multi: Enable multi-file selection.
+Arguments
+directory (optional): The directory to search for files. If not provided, the current directory is used.
+extension (optional): The file extension to filter files. If not provided, all files are shown.
+Examples
+Select a single file with a specific extension:
+`selected_file=$(fileSelector .txt)`
+
+Select multiple files with a specific extension:
+`selected_files=$(fileSelector -m .txt)`
+
+Search for files in a specific directory:
+`selected_file=$(fileSelector /path/to/directory)`
+
+Search for files with a specific extension in a specific directory:
+`selected_file=$(fileSelector /path/to/directory .txt)`
+
+Enable multi-file selection in a specific directory:
+`selected_files=$(fileSelector -m /path/to/directory)`
+Note: The fileSelector function requires the fzf utility as well as find to be installed on your system.
 
 Please refer to the function descriptions within the friendly.bash script for more details on each function's usage and parameters.
 
