@@ -1,8 +1,8 @@
-# HumanBash
-HumanBash is a bash script library designed to make bash scripting easier and more human-readable. It provides a collection of functions that simplify common tasks and improve the overall readability of your scripts.
+# Friendly.Bash
+Friendly.Bash is a bash script library designed to make bash scripting easier and more human-readable. It provides a collection of functions that simplify common tasks and improve the overall readability of your scripts.
 
 ## Motivation
-Bash scripting is a powerful tool, but sometimes the syntax and constructs can be difficult to read and understand. HumanBash aims to address this issue by offering a set of functions that provide more intuitive and human-readable alternatives for common bash operations.
+Bash scripting is a powerful tool, but sometimes the syntax and constructs can be difficult to read and understand. Friendly.Bash aims to address this issue by offering a set of functions that provide more intuitive and human-readable alternatives for common bash operations.
 
 ## Dependencies
 
@@ -11,7 +11,7 @@ Bash scripting is a powerful tool, but sometimes the syntax and constructs can b
 - node (needed for Progress Bar)
 
 ## Features
-HumanBash includes the following features:
+Friendly.Bash includes the following features:
 
 - Message Placement: Functions for printing messages at specific lines or line/column positions on the terminal.
 - File Selector: Interactive file selection using fzf (requires fzf to be installed).
@@ -24,21 +24,21 @@ HumanBash includes the following features:
 
 More features coming soon! This is still in early development.
 
-## Clone the HumanBash repository:
+## Clone the Friendly.Bash repository:
 
-`git clone https://github.com/your-username/humanbash.git`
+`git clone https://github.com/fearlessgeekmedia.com/Freindly.Bash`
 Source the humanbash.sh script in your own bash script:
 
-`source /path/to/humanbash/humanbash.sh`
+`source /path/to/friendly.bash`
 
 ## Usage
-To use HumanBash functions in your bash scripts, simply source the humanbash.sh script and call the desired function. Here's an example:
+To use Friendly.Bash functions in your bash scripts, simply source the humanbash.sh script and call the desired function. Here's an example:
 
 ```
 #!/usr/bin/env bash
 
-#Source HumanBash
-source /path/to/humanbash/human.bash
+#Source Friendly.Bash
+source /path/to/friendly.bash
 
 #Print a message at line 1
 printAtLine 1 "Hello, world!"
@@ -62,10 +62,10 @@ progressBar 50
 sleep 5 | progressBar #Note that without the number, a percentage of progress will not be displayed.
 ```
 
-Please refer to the function descriptions within the humanbash.sh script for more details on each function's usage and parameters.
+Please refer to the function descriptions within the friendly.bash script for more details on each function's usage and parameters.
 
 ## License
-HumanBash is released under the MIT License. See the LICENSE file for more information.
+Friendly.Bash is released under the MIT License. See the LICENSE file for more information.
 
 ## Contributing
-Contributions are welcome! If you have any ideas, bug reports, or feature requests, please open an issue or submit a pull request on the HumanBash repository.
+Contributions are welcome! If you have any ideas, bug reports, or feature requests, please open an issue or submit a pull request on the Friendly.Bash repository.
