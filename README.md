@@ -49,6 +49,10 @@ printAtLine 1 "Hello, world!"
 #Replace text in a file
 replaceInFile "file.txt" "old-text" "new-text"
 
+# Interactive file selection
+selected_file=$(fileSelector)
+echo "You selected: $selected_file"
+
 # Check if a file exists
 if fileExists "file.txt"; then
   echo "File exists!"
