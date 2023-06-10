@@ -27,12 +27,12 @@ More features coming soon! This is still in early development.
 ## Clone the Friendly.Bash repository:
 
 `git clone https://github.com/fearlessgeekmedia.com/Freindly.Bash`
-Source the humanbash.sh script in your own bash script:
+Source the Friendly.Bash script in your own bash script:
 
 `source /path/to/friendly.bash`
 
 ## Usage
-To use Friendly.Bash functions in your bash scripts, simply source the humanbash.sh script and call the desired function. Here's an example:
+To use Friendly.Bash functions in your bash scripts, simply source the Friendly.Bash script and call the desired function. Here's an example:
 
 ```
 #!/usr/bin/env bash
