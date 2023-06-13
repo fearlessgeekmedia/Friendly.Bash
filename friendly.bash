@@ -9,8 +9,30 @@
 # So this is basically a set of functions I'm using and making
 # available to the public under the MIT license.
 
+## Cursor Visibility
 
-# Message Placement
+hideCursor() {
+  printf '\e[?25l'
+}
+
+showCursor() {
+  printf '\e[?25h'
+}
+
+## Line Wrapping
+
+lineWrapping() {
+  lwoption=$@
+  if [ $lwoption = "enabled" ]; then
+    printf '\e[?7h'
+  elif [ $lwoption = "disabled" ]; then
+    printf '\e[?7l'
+  else
+    printf "lineWrapping: Invalid option - $lwoption \n \
+    \"enabled\" or \"disabled\" expected. \n"
+  fi 
+}
+# Message and Cursor Placement
 # Prints a message on a specified line
 printAtLine() {
   local LINE=$1
@@ -23,7 +45,38 @@ printAtLineCol() {
   local LINE=$1
   local COL=$2
   shift 2
-  echo -e "\033[${LINE};${COL}H$@"
+  printf "\e[${LINE};${COL}H$@"
+}
+
+gotoLine() {
+  local LINE=$1
+  printf "\e[${LINE}H"
+}
+
+gotoLineCol() {
+  local LINE=$1
+  local COL=$2
+  printf "\e[${LINE};${COL}H"
+}
+
+moveUp() {
+  local LINES=$1
+  printf "\e[${LINES}A"
+}
+
+moveDown() {
+  local LINES=$1
+  printf "\e[${LINES}B"
+}
+
+moveLeft() {
+  local COLS=$1
+  printf "\e[${COLS}D"
+}
+
+moveRight() {
+  local COLS=$1
+  printf "\e[${COLS}C"
 }
 
 # File Selector (will require fzf)
@@ -135,4 +188,17 @@ progressBar() {
   DIR=$(dirname -- "${BASH_SOURCE[0]}")
   DIR=$(realpath -e -- "$DIR")
   node "$DIR/progressbar.js" "$1"
+}
+
+# Other
+
+setScrollArea() {
+  FIRSTLINE=$1
+  SECONDLINE=$2
+  printf "\e[${FIRSTLINE};${SECONDLINE}r"
+  gotoLine $1
+}
+
+releaseScrollArea() {
+  printf "\e[;r"
 }
