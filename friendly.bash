@@ -181,7 +181,7 @@ confirm() {
   done
 }
 
-# String manipulation
+# User Interface Functions
 
 # Progress Bar
 progressBar() {
@@ -189,8 +189,6 @@ progressBar() {
   DIR=$(realpath -e -- "$DIR")
   node "$DIR/progressbar.js" "$1"
 }
-
-# Other
 
 setScrollArea() {
   FIRSTLINE=$1
