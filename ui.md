@@ -6,7 +6,7 @@ This section covers user interface functions that can be used to enhance the dis
 
 The progressBar function displays a progress bar.
 
-** Note ** There are some issues with progressBar at this time and it may not work as expected. 
+** Note ** There are some issues with progressBar at this time and it may not work as expected. We currently treat this feature as experimental and it's possible it may be taken out of Friendy.Bash alltogether.
 
 ## Usage
 `progressBar <progress>`
