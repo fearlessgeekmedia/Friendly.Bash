@@ -7,6 +7,9 @@ Friendly.Bash is a bash script library designed to make bash scripting easier an
 ## Documentation
 
 - [hideCursor_showCursor.md](hideCursor_showCursor.md): Documentation for functions to hide and show the cursor in the terminal.
+- [table_formatting.md](table_formatting.md): Documentation for table formatting functions
+- [string_manipulation.md](/string_manipulation.md): Documentation for string manipulation
+- [dialog_box.md](/dialog_box.md): Documentation for the dialogBox function.
 - [lines_and_cols.md](lines_and_cols.md): Documentation for functions related to line and column manipulation in the terminal.
 - [file_selector.md](file_selector.md): Documentation for the fileSelector function, which provides an interactive file selection feature.
 - [file_manipulation.md](file_manipulation.md): Documentation for various file manipulation functions, such as replaceInFile, fileExists, directoryExists, extractColumn, and filterLines.
