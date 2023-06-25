@@ -2,6 +2,25 @@
 
 This section covers user interface functions that can be used to enhance the display and interaction in your bash scripts.
 
+# getTermSize
+
+The getTermSize function gets the size of your terminal emulator in rows and columns, and places the values into $termRows and $termColumns variables respectively.
+
+This can be used in conjunction with setScrollArea or other UI functions to help create a TUI interface.
+
+## Usage
+
+`getTermSize`
+
+## Example
+```
+getTermSize
+echo "Rows: $termRows"
+echo "Columns: $termColumns"
+```
+
+Also look at the scrollarea.sh example to see the `$termRows` value being used with `setScrollAra` and `gotoLine` to set up a basic TUI interface. 
+
 # progressBar
 
 The progressBar function displays a progress bar.
