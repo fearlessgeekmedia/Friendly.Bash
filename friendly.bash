@@ -9,8 +9,7 @@
 # So this is basically a set of functions I'm using and making
 # available to the public under the MIT license.
 
-DIR=$(dirname -- "${BASH_SOURCE[0]}")
- DIR=$(realpath -e -- "$DIR")
+DIR=$(cd "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 
 source $DIR/misc.bash
 source $DIR/stringmanipulation.bash
