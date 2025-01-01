@@ -20,3 +20,22 @@ setScrollArea() {
 releaseScrollArea() {
   printf "\e[;r"
 }
+
+
+hr() {
+  # Get the terminal width
+  width=$(tput cols)
+
+  # Print a line of underscores
+  printf '%*s\n' "$width" '' | tr ' ' '_'
+}
+
+
+dhr() {
+  # Get the terminal width
+  width=$(tput cols)
+
+  # Print a line of underscores
+  printf '%*s\n' "$width" '' | tr ' ' '='
+
+}
