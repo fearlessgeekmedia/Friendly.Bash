@@ -27,7 +27,7 @@ hr() {
   width=$(tput cols)
 
   # Print a line of underscores
-  printf '%*s\n' "$width" '' | tr ' ' '_'
+  printf '%*s\n' "$width" '' | tr ' ' '─'
 }
 
 
@@ -36,6 +36,6 @@ dhr() {
   width=$(tput cols)
 
   # Print a line of underscores
-  printf '%*s\n' "$width" '' | tr ' ' '='
+  printf '%*s\n' "$width" '' | tr ' ' '═'
 
 }
