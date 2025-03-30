@@ -36,6 +36,6 @@ echo "Selected file: $selectedFile"
 ## Requirements
 The fileSelector function requires the fzf command-line fuzzy finder tool to be installed. You can check if fzf is installed by running the following command:
 
-`command -v fzf >/dev/null 2>&1`
+`command -v fzf` or `which fzf`.
 
 If fzf is not found, you will need to install it before using the fileSelector function.
